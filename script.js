@@ -12,10 +12,12 @@ function darkModeButton() {
         document.body.style.backgroundColor = 'black';
         heading.style.color = 'white';
         para.style.color = 'white';
+        btn.textContent = 'Light Mode';
     } else {
         darkModeOn = false;
         document.body.style.backgroundColor = 'white';
         heading.style.color = 'black';
         para.style.color = 'black';
+        btn.textContent = 'Dark Mode';
     }
 }
