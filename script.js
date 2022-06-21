@@ -1,23 +1,21 @@
 let heading = document.querySelector('h1');
 let para = document.querySelector('p');
 let btn = document.querySelector('button');
+let span = document.querySelector('span');
 let darkModeOn = false;
 
-btn.addEventListener('click', darkModeButton);
-
-
-function darkModeButton() {
-    if (!darkModeOn) {
-        darkModeOn = true;
-        document.body.style.backgroundColor = 'black';
-        heading.style.color = 'white';
-        para.style.color = 'white';
-        btn.textContent = 'Light Mode';
-    } else {
-        darkModeOn = false;
-        document.body.style.backgroundColor = 'white';
-        heading.style.color = 'black';
-        para.style.color = 'black';
-        btn.textContent = 'Dark Mode';
-    }
+function darkModeButton(btnBool, bgColor, textColor, btnText) {
+    darkModeOn = btnBool;
+    document.body.style.backgroundColor = bgColor;
+    heading.style.color = textColor;
+    para.style.color = textColor;
+    span.textContent = btnText;
 }
+
+btn.addEventListener('click', () => {
+    if (!darkModeOn) {
+        darkModeButton(true, 'black', 'white', 'ON');
+    } else {
+        darkModeButton(false, 'white', 'black', 'OFF');
+    }
+})
